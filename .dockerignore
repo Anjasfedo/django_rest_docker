@@ -5,3 +5,4 @@ Dockerfile
 .gitignore
 README.md
 docker-compose*
+db.sqlite3
