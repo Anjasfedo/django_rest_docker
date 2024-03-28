@@ -1,0 +1,7 @@
+/myenv/
+Dockerfile
+.dockerignore
+.git
+.gitignore
+README.md
+docker-compose*
