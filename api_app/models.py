@@ -5,10 +5,11 @@ from django.db import models
 class Letter(models.Model):
     name = models.CharField(max_length=50)
     title = models.CharField(max_length=100)
-    body = models.CharField(max_length=100000)
+    body = models.TextField()
     sender = models.CharField(max_length=50)
     date = models.DateTimeField()
-    count = models.IntegerField()
+    number = models.IntegerField()
+    is_done = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
