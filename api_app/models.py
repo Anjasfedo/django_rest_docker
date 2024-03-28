@@ -14,19 +14,28 @@ class User(models.Model):
     def __str__(self):
         return self.name
 
+class Tag(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+
 class Letter(models.Model):
     
     title = models.CharField(max_length=100)
     body = models.TextField()
     sender = models.ForeignKey(
         Author, 
-        on_delete=models.PROTECT, 
-        null=True
+        on_delete=models.PROTECT,
+        default=None
     )
     receiver = models.OneToOneField(
         User,
         on_delete=models.CASCADE,
         null=True
+    )
+    tag = models.ManyToManyField(
+        Tag
     )
     date = models.DateTimeField(blank=True, null=True)
     number = models.IntegerField()
