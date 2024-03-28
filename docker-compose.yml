@@ -4,5 +4,6 @@ services:
   django-app:
     build: .
     volumes:
-      - ./:/usr/src/app
-      
+      - ./:/usr/src/app:ro
+    ports:
+      - "8000:8000"
