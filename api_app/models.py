@@ -21,9 +21,14 @@ class Letter(models.Model):
     sender = models.ForeignKey(
         Author, 
         on_delete=models.PROTECT, 
-        blank=False
+        null=True
     )
-    date = models.DateTimeField()
+    receiver = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE,
+        null=True
+    )
+    date = models.DateTimeField(blank=True, null=True)
     number = models.IntegerField()
     is_done = models.BooleanField(default=False)
 
