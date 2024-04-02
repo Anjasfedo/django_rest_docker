@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .models import Letter, Author, User
-from .serializers import LetterSerializer, AuthorSerializer, UserSerializer
+from .models import Letter, Author, User, Tag
+from .serializers import LetterSerializer, AuthorSerializer, UserSerializer, TagSerializer
 
 # Create your views here.
 
@@ -20,6 +20,6 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
 
 
-# class TagViewSet(viewsets.ModelViewSet):
-#     queryset = Tag.objects.all()
-#     serializer_class = TagSerializer
+class TagViewSet(viewsets.ModelViewSet):
+    queryset = Tag.objects.all()
+    serializer_class = TagSerializer

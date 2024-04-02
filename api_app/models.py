@@ -17,11 +17,11 @@ class User(models.Model):
         return self.name
 
 
-# class Tag(models.Model):
-#     name = models.CharField(max_length=50)
+class Tag(models.Model):
+    name = models.CharField(max_length=50)
 
-#     def __str__(self):
-#         return self.name
+    def __str__(self):
+        return self.name
 
 
 class Letter(models.Model):
@@ -38,9 +38,9 @@ class Letter(models.Model):
         on_delete=models.CASCADE,
         null=True
     )
-    # tag = models.ManyToManyField(
-    #     Tag
-    # )
+    tag = models.ManyToManyField(
+        Tag
+    )
     date = models.DateTimeField(blank=True, null=True)
     number = models.IntegerField()
     is_done = models.BooleanField(default=False)
