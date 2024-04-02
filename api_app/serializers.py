@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Letter, Author, User, Tag
+from .models import Letter, Author, User
 
 
 class AuthorSerializer(serializers.ModelSerializer):
@@ -14,17 +14,17 @@ class UserSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class TagSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Tag
-        fields = '__all__'
+# class TagSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Tag
+#         fields = '__all__'
 
 
 class LetterSerializer(serializers.ModelSerializer):
     sender = AuthorSerializer()
     receiver = UserSerializer()
-    tag = TagSerializer(many=True)
+    # tag = TagSerializer(many=True)
 
     class Meta:
         model = Letter
-        fields = '__all__'
+        fields = ['title', 'body', 'date', 'number', 'is_done', 'sender', 'receiver']
