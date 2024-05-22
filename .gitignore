@@ -23,3 +23,5 @@ local_settings.py
 *~
 .cache/
 .pytest_cache/
+
+api_app/serviceAccountKey.json
