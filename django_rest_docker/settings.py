@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'django_filters',
-    # 'rest_framework_api_key',
     'rest_framework.authtoken',
     'api_app',
 ]
@@ -135,7 +134,6 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 2,
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
-        # 'rest_framework_api_key.permissions.HasAPIKey',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication'
